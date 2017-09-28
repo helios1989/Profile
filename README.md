@@ -2,11 +2,12 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.3.
 
-## Used this Youtube tutorial https://www.youtube.com/watch?v=pU9Q6oiQNd0 to create this app.
+Used this Youtube tutorial https://www.youtube.com/watch?v=pU9Q6oiQNd0 to create this app.
 
-## This app uses Angular to display details about persons including his/her name, residence, and hobbies. 'Edit me' button allows access to edit persons. This app also uses JSONPlaceholder to get Posts from https://jsonplaceholder.typicode.com/posts and displays them on the web page.  
+This app uses Angular to display details about persons including his/her name, residence, and hobbies. 'Edit me' button allows access to edit persons. This app also uses JSONPlaceholder to get Posts from https://jsonplaceholder.typicode.com/posts and displays them on the web page.  
 
-### Note: node_modules folder is not included.
+### Note 
+node_modules folder is not included.
 
 ### Development server
 
