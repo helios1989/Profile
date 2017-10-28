@@ -12,7 +12,7 @@ export class UserComponent implements OnInit {
   address:Address;
   hobbies: string[];
   email:string;
-  post:Post[];
+  photos:Photos[];
   isEdit:boolean = false;
 
   constructor(private dataService:DataService) {
@@ -21,27 +21,32 @@ export class UserComponent implements OnInit {
 
   ngOnInit() {
     console.log('ngInit ran...');
-    this.name = 'John Doe';
-    this.age = 30;
+    this.name = 'Sunny Patel';
+    this.age = 24;
     this.address={
-      street:'Saintsbury', 
-      city:'Brampton', 
+      street:'University Avenue', 
+      city:'Toronto', 
       state:'ON'
     }
-    this.hobbies=['code', 'read', 'watch stuff'];
-    this.email = 'johndoe@jd.com';
-    this.dataService.getPosts().subscribe((posts) => {
-      this.post = posts;
+    this.hobbies=['Learn new technologies', 'Read books', 'Long walks...'];
+    this.email = 'sp2141@gmail.com';
+    this.dataService.getPosts().subscribe((photos) => {
+      this.photos = photos;
     });
   }
 
-  onClick () {
-    this.name = 'clicked name';
-    this.hobbies.push('new hobby');
+  onClick (hob) {
+    if (this.hobbies.indexOf(hob) == -1) {
+      this.hobbies.push(hob);
+    } else {
+
+    }
   }
 
   addHobby(hob) {
-    this.hobbies.unshift(hob);
+    if (this.hobbies.indexOf(hob) == -1) {
+      this.hobbies.push(hob);
+    }
     return false;
   }
 
@@ -55,8 +60,8 @@ export class UserComponent implements OnInit {
 
   toggleEdit() {
     this.isEdit = !this.isEdit;
-  }
 
+  }
 }
 
 interface Address {
@@ -65,9 +70,10 @@ interface Address {
     state:string
 }
 
-interface Post {
+interface Photos {
+  albumId:number,
   id:number,
   title:string,
-  body:string,
-  userId:number
+  url:string,
+  thumbnailUrl:number
 }
